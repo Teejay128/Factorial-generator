@@ -4,9 +4,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teejay webpage</title>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <input type="button" value="Generate Factorial" id="button">
-    <!-- <script src="factorial.js"></script> -->
+    <div class="form-group">
+        <h1>Factorial Generator</h1>
+        <p>Generate the the factorials of a given number</p>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter Number">
+            <button class="btn btn-primary" type="button" id="button-addon2">Get factorial</button>
+        </div>
+        <div class="form-group has-danger">
+            <input type="text" value="Invalid number" class="form-control is-invalid" id="inputInvalid">
+            <div class="invalid-feedback">The number you typed in is not valid Try another?</div>
+        </div>
+    </div>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Number</th>
+                <td scope="row">Factorials</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-primary">
+                <td scope="col">1</td>
+                <td scope="row">1, 2, 3, 4, 5, 6, 7</td>
+            </tr>
+            <tr class="table-primary">
+                <td scope="col">1</td>
+                <td scope="row">1, 2, 3, 4, 5, 6, 7</td>
+            </tr>
+            <tr class="table-primary">
+                <td scope="col">1</td>
+                <td scope="row">1, 2, 3, 4, 5, 6, 7</td>
+            </tr>
+            <tr class="table-primary">
+                <td scope="col">1</td>
+                <td scope="row">1, 2, 3, 4, 5, 6, 7</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="factorial.js"></script>
 </body>
 </html> 
