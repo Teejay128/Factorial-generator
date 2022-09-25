@@ -1,25 +1,43 @@
+let button = document.querySelector('button');
 
+button.addEventListener('click', generateFactorial);
 
-// function fact() {
-//     // checking if number is negative
-// if (number < 0) {
-//     console.log('Error! Factorial for negative number does not exist.');
-// }
+function generateFactorial(e){
+    e.preventDefault();
+    let numberInput = document.querySelector('#form-input');
+    let number = numberInput.value;
+    number = parseInt(number);
 
-// // if number is 0
-// else if (number === 0) {
-//     console.log(`The factorial of ${number} is 1.`);
-//     return `Facttorial of ${number} is 1`
-// }
+    if(number < 0){
+        console.log('less than 0')
+    } else if(number == 0){
+        console.log('is 0')
+    } else if(number > 100){
+        console.log(`${number} is greater than 100`)
+    } else if(number > 0){
+        let factArr = [];
+        let factorial = 1;
+        for(let i = 1; i <= number; i++){
+            factArr.unshift(i);
+            factorial *= i;
+        };
+        let text = "1";
+        for(let i = 2; i <= factArr.length; i++){
+            text += ` * ${i}`
+        };
 
-// // if number is positive
-// else {
-//     let fact = 1;
-//     for (i = 1; i <= number; i++) {
-//         fact *= i;
-//     }
-//     console.log(`The factorial of ${number} is ${fact}.`);
-//     return `Factorial of ${number} is ${fact}.`
-// }
-// }
-// button.addEventListener("click", fact);
+        let tableBody = document.querySelector('tbody');
+
+        tableBody.innerHTML += `
+        <tr class="table-primary">
+            <td>${number}</td>
+            <td>${text}</td>
+            <td>${factorial}</td>
+        </tr>
+        `
+    } else {
+        console.log('is invalid')
+    }
+
+}
+
